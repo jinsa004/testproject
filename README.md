@@ -48,7 +48,7 @@ create table company(
     company_number INT NOT null,
     company_name VARCHAR(24) NOT null,
     company_email VARCHAR(64) NOT null,
-    company_tel INT NOT null,
+    company_tel VARCHAR(24) NOT null,
     company_location VARCHAR(256) NOT null,
     job_id INT NOT null,
     company_username VARCHAR(24) NOT null,
@@ -117,13 +117,13 @@ univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, caree
 VALUES('최선을 다하겠습니다..', 2, NULL, NULL, NULL, NULL, NULL, "서면대", 20120301, 20180201, "영어영문학과", 3.3, "보성엔진", "1년", "사원", "해외영업", "무역관리", 2, 0, NOW());
 INSERT INTO company
 (company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-VALUES(621070, '삼성전자', 'aabb@samsung.com', 0212341234, '부산시 부산진구 어디어디', 2, 'samsungman1234', 'q1w2e3r4');
+VALUES(621070, '삼성전자', 'aabb@samsung.com', '0212341234', '부산시 부산진구 어디어디', 2, 'samsungman1234', 'q1w2e3r4');
 INSERT INTO company
 (company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-VALUES(110152, '보성엔지니어링', 'ebz2@bosung.com', 0516010864, '부산시 부산진구 초량동 어디어디', 3, 'bosung1234', 'q1w2e3r4!!');
+VALUES(110152, '보성엔지니어링', 'ebz2@bosung.com', '0516010864', '부산시 부산진구 초량동 어디어디', 3, 'bosung1234', 'q1w2e3r4!!');
 INSERT INTO company
 (company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-VALUES(117242, 'LG전자', 'veda@lgelectronic.com', 0255221854, '부산시 부산진구 어디어디', 1, 'LGman1234', 'q1w2e3r4!@');
+VALUES(117242, 'LG전자', 'veda@lgelectronic.com', '0255221854', '부산시 부산진구 어디어디', 1, 'LGman1234', 'q1w2e3r4!@');
 INSERT INTO intro
 (company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image)
 VALUES(1, '회사소개입니다', 19980224, 'flutter 신규 앱 개발', '2600만원', '야근거의없음, 월1회 회식', '우리회사는 어쩌고저쩌고 이렇습니다', '부산시 부산진구 어디어디', 3, NULL);
