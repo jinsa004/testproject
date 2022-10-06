@@ -5,7 +5,7 @@ import java.util.List;
 public interface NoticeDao {
     public List<Notice> findAll();
 	public Notice findById(Integer noticeId);
-	public int insert(Notice notice);
+	public Notice insert(Notice notice);
 	public void update(Integer noticeId, Notice notice);
 	public void deleteById(Integer noticeId);
 }

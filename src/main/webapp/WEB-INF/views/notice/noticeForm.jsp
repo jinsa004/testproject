@@ -5,27 +5,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
     <div class="container">
-        <form action="/insert" method="post">
+        <form>
             <div class="mb-3 mt-3">
-                <input name="noticeTitle" type="text" class="form-control" placeholder="Enter noticeTitle">
-                <input name="noticeConame" type="text" class="form-control" placeholder="Enter noticeConame">
-                <input name="noticeImage" type="text" class="form-control" placeholder="Enter noticeImage">
-                <input name="noticePeriod" type="text" class="form-control" placeholder="Enter noticePeriod">
-                <input name="noticeDept" type="text" class="form-control" placeholder="Enter noticeDept">
-                <input name="noticePosition" type="text" class="form-control" placeholder="Enter noticePosition">
-                <input name="noticeTask" type="text" class="form-control" placeholder="Enter noticeTask">
-                <input name="noticeSal" type="text" class="form-control" placeholder="Enter noticeSal">
-                <input name="noticeQual" type="text" class="form-control" placeholder="Enter noticeQual">
-                <input name="noticeCareer" type="text" class="form-control" placeholder="Enter noticeCareer">
-                <input name="noticeWellfare" type="text" class="form-control" placeholder="Enter noticeWellfare">
-                <input name="companyId" type="text" class="form-control" placeholder="Enter companyId">
+                <input id="noticeTitle" type="text" class="form-control" placeholder="Enter noticeTitle">
+                <input id="noticeConame" type="text" class="form-control" placeholder="Enter noticeConame">
             </div>
-            <button type="submit" class="btn btn-primary">공고등록</button>
+            <button type="button" onclick="btnInsertNotice()" class="btn btn-primary">공고등록</button>
         </form>
     </div>
+
+<script>
+
+function btnInsertNotice(){
+    let data = {
+        noticeTitle : $("#noticeTitle").val(),
+        noticeConame : $("#noticeConame").val()
+		};
+        
+        console.log(data);
+	$.ajax("/insert", {
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(data),
+		headers: {
+			"Content-Type": "application/json; charset=utf-8"
+		}
+	}).done((res) => {
+		if (res.code == 1) {
+            alert("공고등록에 실패하였습니다.");
+			location.reload;
+		} else {
+            alert("공고등록에 실패하였습니다.");
+		}
+	});
+}
+</script>
 </body>
 </html>
