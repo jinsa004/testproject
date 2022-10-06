@@ -6,7 +6,12 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Notice {
-    private Integer noticeId;
+    public Notice(String noticeTitle, String noticeWellfare, Integer companyId) {
+		this.companyId = companyId;
+		this.noticeTitle = noticeTitle;
+		this.noticeWellfare = noticeWellfare;
+	}
+	private Integer noticeId;
 	private Integer companyId;
 	private String noticeTitle;
 	private String noticeConame;
