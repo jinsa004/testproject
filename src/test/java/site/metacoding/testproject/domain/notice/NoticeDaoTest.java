@@ -23,10 +23,10 @@ public class NoticeDaoTest {
     @Test
     public void Test(){
         //given
-
+        int companyId = 1;
         //when
-        List<Notice> noticePS = noticeDao.findAll();
+        List<Notice> noticePS = noticeDao.findByCompanyId(companyId);
         //then
-        assertEquals(10, noticePS.size());
+        assertEquals(1, noticePS.size());
     }
 }
