@@ -15,6 +15,16 @@ public class Intro {
 	private String introWellfare;
 	private String introContent;
 	private String introLocation;
-    private String introImage;
 	private Integer jobId;
+    private String introImage;
+	
+	public Intro(String introTitle, String introBirth, String introTask) {
+		this.introTitle = introTitle;
+		this.introBirth = introBirth;
+		this.introTask = introTask;
+	}
+
+	
+
+
 }
