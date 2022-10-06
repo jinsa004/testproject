@@ -5,8 +5,8 @@
 <mapper namespace="site.metacoding.testproject.domain.notice.NoticeDao">
 
 	<insert id="insert">
-		INSERT INTO notice(company_id, notice_title, notice_coname, notice_image, notice_period, notice_dept, notice_position, notice_task, notice_sal, notice_qual, notice_career, notice_wellfare, job_id)
-        VALUES(#{companyId}, #{noticeTitle}, #{noticeConame},#{noticeImage}, #{noticePeriod},#{noticeDept},#{noticePosition},#{noticeTask},#{noticeSal},#{noticeQual},#{noticeCareer}, #{noticeWellfare},#{jobId})
+		INSERT INTO notice(notice_title, notice_coname)
+        VALUES(#{noticeTitle}, #{noticeConame})
 	</insert>
 
 	<select id="findAll"

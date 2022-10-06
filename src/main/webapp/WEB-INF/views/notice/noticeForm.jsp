@@ -37,7 +37,7 @@ function btnInsertNotice(){
 		}
 	}).done((res) => {
 		if (res.code == 1) {
-            alert("공고등록에 실패하였습니다.");
+            alert("공고등록에 성공하였습니다.");
 			location.reload;
 		} else {
             alert("공고등록에 실패하였습니다.");
