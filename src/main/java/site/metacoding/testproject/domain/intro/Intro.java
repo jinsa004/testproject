@@ -1,8 +1,12 @@
 package site.metacoding.testproject.domain.intro;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class Intro {
@@ -17,7 +21,7 @@ public class Intro {
 	private String introLocation;
 	private Integer jobId;
     private String introImage;
-	
+
 	public Intro(String introTitle, String introBirth, String introTask) {
 		this.introTitle = introTitle;
 		this.introBirth = introBirth;
