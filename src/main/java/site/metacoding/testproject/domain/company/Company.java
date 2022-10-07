@@ -19,4 +19,6 @@ public class Company {
 	private String companyUsername;
 	private String companyPassword;
 	private Integer jobId;
+
+	private Integer no;
 }

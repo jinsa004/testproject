@@ -26,7 +26,7 @@
                 <tbody>
                     <c:forEach var="company" items="${companyList}">
                         <tr>
-                            <td>${company.companyId}</td>
+                            <td>${company.no}</td>
                             <td>${company.companyEmail}</td>
                             <th>${company.companyName}</th>
                         </tr>

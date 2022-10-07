@@ -5,7 +5,9 @@
 	<insert id="insert"></insert>
 
 	<select id="findAll" resultType="site.metacoding.testproject.domain.company.Company">
-		Select * from company
+		SELECT company_id, row_number() over(order BY company_id desc) as NO,
+		company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password
+		from company
 	</select>
 
 	<select id="findById" resultType="site.metacoding.testproject.domain.company.Company"></select>
