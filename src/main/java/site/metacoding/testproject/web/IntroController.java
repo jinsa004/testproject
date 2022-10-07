@@ -18,13 +18,13 @@ public class IntroController {
     private final IntroService introService;
 
     @GetMapping("/")
-    public String main(){
+    public String main() {
         return "intro/introForm";
     }
 
     @PostMapping("/insert")
-    public @ResponseBody CMRespDto<?> insertResume(@RequestBody Intro intro){
+    public @ResponseBody CMRespDto<?> insertIntro(@RequestBody Intro intro) {
         introService.기업소개작성(intro);
-        return new CMRespDto<>(1,"등록성공",null);
+        return new CMRespDto<>(1, "등록성공", null);
     }
 }
