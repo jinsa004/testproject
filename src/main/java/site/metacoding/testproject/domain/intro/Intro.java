@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import site.metacoding.testproject.web.request.UpdateDto;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,10 +29,10 @@ public class Intro {
 		this.introTask = introTask;
 	}
 
-	public void update(Intro intro) {
-		this.introTitle = intro.getIntroTitle();
-		this.introBirth = intro.getIntroBirth();
-		this.introTask = intro.getIntroTask();
+	public void update(UpdateDto updateDto) {
+		this.introTitle = updateDto.getIntroTitle();
+		this.introBirth = updateDto.getIntroBirth();
+		this.introTask = updateDto.getIntroTask();
 	}
 
 }

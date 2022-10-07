@@ -21,7 +21,8 @@
 	</select>
 
 	<update id="update">
-		UPDATE intro SET company_id = #{companyId}, intro_birth = #{introBirth}, intro_tel = #{introTel}, intro_email = #{introEmail}, intro_location = #{introLocation}
+		UPDATE intro SET company_id = #{companyId}, intro_birth = #{introBirth}, intro_task = #{introTask}, intro_sal = #{introSal}, intro_welfare = #{introWellfare}, 
+		intro_location = #{introLocation}, job_id = #{jobId}, intro_image = #{introImage}
 		where intro_id = #{introId}
 	</update>
 
