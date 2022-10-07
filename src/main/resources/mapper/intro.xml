@@ -8,11 +8,22 @@
 		VALUES(#{companyId}, #{introTitle}, #{introBirth}, #{introTask}, #{introSal}, #{introWellfare}, #{introContent}, #{introLocation}, #{jobId}, #{introImage});
 	</insert>
 
-	<select id="findAll" resultType="site.metacoding.testproject.domain.intro.Intro"></select>
+	<select id="findAll" resultType="site.metacoding.testproject.domain.intro.Intro">
+		SELECT i.intro_id, c.company_name company_name, row_number() over(order BY i.intro_id asc) as NO, i.intro_title, i.intro_birth, i.intro_task, i.intro_sal, i.intro_wellfare,
+		i.intro_content, i.intro_location, i.job_id, i.intro_image
+		FROM intro i
+		LEFT OUTER JOIN company c
+		ON i.company_id = c.company_id
+	</select>
 
-	<select id="findById" resultType="site.metacoding.testproject.domain.intro.Intro"></select>
+	<select id="findById" resultType="site.metacoding.testproject.domain.intro.Intro">
+		SELECT * FROM intro WHERE Intro_id = #{introId}
+	</select>
 
-	<update id="update"></update>
+	<update id="update">
+		UPDATE intro SET company_id = #{companyId}, intro_birth = #{introBirth}, intro_tel = #{introTel}, intro_email = #{introEmail}, intro_location = #{introLocation}
+		where intro_id = #{introId}
+	</update>
 
 	<delete id="deleteById"></delete>
 

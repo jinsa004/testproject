@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Intro {
-    private Integer introId;
+	private Integer introId;
 	private Integer companyId;
 	private String introTitle;
 	private String introBirth;
@@ -20,7 +20,7 @@ public class Intro {
 	private String introContent;
 	private String introLocation;
 	private Integer jobId;
-    private String introImage;
+	private String introImage;
 
 	public Intro(String introTitle, String introBirth, String introTask) {
 		this.introTitle = introTitle;
@@ -28,7 +28,10 @@ public class Intro {
 		this.introTask = introTask;
 	}
 
-	
-
+	public void update(Intro intro) {
+		this.introTitle = intro.getIntroTitle();
+		this.introBirth = intro.getIntroBirth();
+		this.introTask = intro.getIntroTask();
+	}
 
 }
