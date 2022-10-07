@@ -7,5 +7,5 @@ public interface NoticeDao {
 	public Notice findById(Integer noticeId);
 	public void insert(Notice notice);
 	public void update(Integer noticeId, Notice notice);
-	public void deleteById(Integer noticeId);
+	public int deleteById(Integer noticeId);
 }
