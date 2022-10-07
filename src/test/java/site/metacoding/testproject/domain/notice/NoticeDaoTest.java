@@ -15,19 +15,19 @@ import site.metacoding.testproject.config.MyBatisConfig;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // 실DB사용
 @MybatisTest
 public class NoticeDaoTest {
-    @Autowired
-    private NoticeDao noticeDao;
+//     @Autowired
+//     private NoticeDao noticeDao;
 
-    @Test
-    public void deleteByNoticeId(){
-        // given
-        int noticeId = 1;
-        // 값이 존재하는지 체크
-        Notice noticePS = noticeDao.findById(noticeId); // 영속화
-        assertTrue(noticePS == null ? false : true);
-        // when
-        int result = noticeDao.deleteById(noticePS.getNoticeId());
-        // then
-        assertEquals(1, result);
-    }
+//     @Test
+//     public void deleteByNoticeId(){
+//         // given
+//         int noticeId = 1;
+//         // 값이 존재하는지 체크
+//         Notice noticePS = noticeDao.findById(noticeId); // 영속화
+//         assertTrue(noticePS == null ? false : true);
+//         // when
+//         int result = noticeDao.deleteById(noticePS.getNoticeId());
+//         // then
+//         assertEquals(1, result);
+//     }
 }
