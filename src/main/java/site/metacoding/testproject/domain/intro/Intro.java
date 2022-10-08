@@ -17,4 +17,6 @@ public class Intro {
 	private String introLocation;
     private String introImage;
 	private Integer jobId;
+
+	private Integer no;
 }

@@ -8,20 +8,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.testproject.domain.company.Company;
-import site.metacoding.testproject.service.CompanyService;
+import site.metacoding.testproject.domain.intro.Intro;
+import site.metacoding.testproject.service.IntroService;
 
 @RequiredArgsConstructor
 @Controller
-public class CompanyController {
+public class IntroController {
 
     @Autowired
-    private CompanyService companyService;
+    private IntroService introService;
 
     @GetMapping("/")
     public String list(Model model) {
-        List<Company> companyList = companyService.목록보기();
-        model.addAttribute("companyList", companyList);
+        List<Intro> introList = introService.목록보기();
+        model.addAttribute("introList", introList);
         return "index";
     }
 }

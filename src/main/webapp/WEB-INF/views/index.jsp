@@ -19,16 +19,16 @@
                 <thead>
                     <tr>
                         <th>번호</th>
-                        <th>이메일</th>
-                        <th>이름</th>
+                        <th>주요업무</th>
+                        <th>복지</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="company" items="${companyList}">
+                    <c:forEach var="intro" items="${introList}">
                         <tr>
-                            <td>${company.no}</td>
-                            <td>${company.companyEmail}</td>
-                            <th>${company.companyName}</th>
+                            <td>${intro.no}</td>
+                            <td>${intro.introTitle}</td>
+                            <th>${intro.introWellfare}</th>
                         </tr>
                     </c:forEach>
                 </tbody>
