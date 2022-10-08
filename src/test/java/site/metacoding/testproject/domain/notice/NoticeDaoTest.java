@@ -12,20 +12,20 @@ import org.springframework.context.annotation.Import;
 
 import site.metacoding.testproject.config.MyBatisConfig;
 
-@Import(MyBatisConfig.class) // MyBatisTest가 MyBatisConfig를 못읽음
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // 실DB사용
-@MybatisTest
-public class NoticeDaoTest {
-    @Autowired
-    private NoticeDao noticeDao;
+// @Import(MyBatisConfig.class) // MyBatisTest가 MyBatisConfig를 못읽음
+// @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // 실DB사용
+// @MybatisTest
+// public class NoticeDaoTest {
+//     @Autowired
+//     private NoticeDao noticeDao;
 
-    @Test
-    public void subsNoticeFind(){
-        // given
-        int employeeId = 1;
-        // when
-        List<Notice> noticeList = noticeDao.findSubsByEmployeeId(employeeId);
-        // then
-        assertEquals(1, noticeList.size());
-    }
-}
+//     @Test
+//     public void subsNoticeFind(){
+//         // given
+//         int employeeId = 1;
+//         // when
+//         List<Notice> noticeList = noticeDao.findSubsByEmployeeId(employeeId);
+//         // then
+//         assertEquals(1, noticeList.size());
+//     }
+// }

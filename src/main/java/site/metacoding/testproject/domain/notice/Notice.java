@@ -20,4 +20,9 @@ public class Notice {
     private String noticeCareer;
     private String noticeWellfare;
 	private Integer jobId;
+
+	public Notice(String noticeTitle, String noticeConame){
+		this.noticeTitle = noticeTitle;
+		this.noticeConame = noticeConame;
+	}
 }

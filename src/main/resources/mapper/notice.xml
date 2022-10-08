@@ -20,11 +20,11 @@
 
 	<select id="findSubsByEmployeeId"
 		resultType="site.metacoding.testproject.domain.notice.Notice">
-		SELECT *
+		SELECT n.notice_title, n.notice_coname
 		FROM notice n
 		INNER JOIN subscribe s
 		ON n.company_id = s.company_id
-		WHERE s.employee_id = #{employeeId}
+		WHERE s.employee_id = #{employeeId};
 	</select>
 
 	<update id="update">
