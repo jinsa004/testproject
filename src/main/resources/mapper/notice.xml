@@ -17,7 +17,7 @@
 		FROM notice
 		WHERE notice_id = #{noticeId}
 	</select>
-
+	
 	<update id="update">
 		UPDATE notice SET
 		notice_title = #{noticeTitle},
@@ -26,11 +26,12 @@
 		notice_period = #{noticePeriod},
 		notice_dept = #{noticeDept},
 		notice_position = #{noticePosition},
-		notice_task = #{noticeSal},
+		notice_task = #{noticeTask},
 		notice_qual = #{noticeQual},
 		notice_career = #{noticeCareer},
 		notice_wellfare = #{noticeWellfare},
-		notice_sal = #{noticeSal}
+		notice_sal = #{noticeSal},
+		job_id = #{jobId}
 		WHERE notice_id = #{noticeId}
 	</update>
 
