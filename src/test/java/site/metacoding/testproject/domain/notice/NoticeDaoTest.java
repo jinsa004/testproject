@@ -17,13 +17,13 @@ public class NoticeDaoTest {
     @Autowired
     private NoticeDao noticeDao;
 
-    @Test
-    public void detail(){
-        // given
-        int noticeId = 1;
-        // when
-        Notice noticePS = noticeDao.findById(noticeId);
-        // then
-        assertEquals("사원모집중", noticePS.getNoticeTitle());
-    }
+    // @Test
+    // public void detail(){
+    //     // given
+    //     int noticeId = 1;
+    //     // when
+    //     Notice noticePS = noticeDao.findById(noticeId);
+    //     // then
+    //     assertEquals("사원모집중", noticePS.getNoticeTitle());
+    // }
 }
