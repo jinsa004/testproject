@@ -1,0 +1,29 @@
+package site.metacoding.testproject.domain.notice;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.context.annotation.Import;
+
+import site.metacoding.testproject.config.MyBatisConfig;
+
+@Import(MyBatisConfig.class) // MyBatisTest가 MyBatisConfig를 못읽음
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // 실DB사용
+@MybatisTest
+public class NoticeDaoTest {
+    @Autowired
+    private NoticeDao noticeDao;
+
+    @Test
+    public void detail(){
+        // given
+        int noticeId = 1;
+        // when
+        Notice noticePS = noticeDao.findById(noticeId);
+        // then
+        assertEquals("사원모집중", noticePS.getNoticeTitle());
+    }
+}

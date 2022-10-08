@@ -2,19 +2,21 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.metacoding.testproject.domain.employee.EmployeeDao">
+<mapper namespace="site.metacoding.testproject.domain.notice.NoticeDao">
 
 	<insert id="insert">
-		INSERT INTO employee(NAME, created_at) VALUES(#{name}, NOW());
+
 	</insert>
 
 	<select id="findAll"
-		resultType="site.metacoding.testproject.domain.employee.Employee">
+		resultType="site.metacoding.testproject.domain.notice.Notice">
 	</select>
 
 	<select id="findById"
-		resultType="site.metacoding.testproject.domain.employee.Employee">
-
+		resultType="site.metacoding.testproject.domain.notice.Notice">
+		SELECT *
+		FROM notice
+		WHERE notice_id = #{noticeId}
 	</select>
 
 	<update id="update">
