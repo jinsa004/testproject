@@ -12,7 +12,13 @@
 	</select>
 
 	<select id="findById" resultType="site.metacoding.testproject.domain.intro.Intro">
-		SELECT * FROM intro WHERE Intro_id = #{introId}
+		SELECT i.intro_id, i.company_id, i.intro_title, i.intro_task, i.intro_sal, i.intro_wellfare, 
+		i.intro_content, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_location, 
+		i.job_id, i.intro_image, c.company_name, i.intro_birth
+		FROM intro i
+		LEFT OUTER JOIN company c
+		ON i.company_id = c.company_id
+		WHERE intro_id = #{introId}
 	</select>
 		
 	<update id="update"></update>
