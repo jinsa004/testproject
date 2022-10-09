@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.testproject.domain.intro.Intro;
 import site.metacoding.testproject.service.IntroService;
-import site.metacoding.testproject.web.request.UpdateDto;
 import site.metacoding.testproject.web.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -32,16 +31,17 @@ public class IntroController {
         return new CMRespDto<>(1, "등록성공", null);
     }
 
-    @GetMapping("/intro/{introId}/updateForm")
-    public String updateForm(@PathVariable Integer introId, Model model) {
-        Intro introPS = introService.기업소개수정화면(introId);
-        model.addAttribute("intro", introPS);
+    @GetMapping("/updateForm/{introId}")
+	public String introDetail(@PathVariable Integer introId, Model model){
+        Intro introPS = introService.기업소개한건보기(introId);
+        model.addAttribute("introPS", introPS);
         return "intro/updateForm";
     }
 
     @PutMapping("/update/{introId}")
-    public @ResponseBody CMRespDto<?> updateIntro(@PathVariable Integer introId, @RequestBody UpdateDto updateDto) {
-        introService.기업소개수정(introId, updateDto);
-        return new CMRespDto<>(1, "수정성공", null);
+    public @ResponseBody CMRespDto<?> noticeSave(@PathVariable Integer introId ,@RequestBody Intro intro){
+        introService.기업소개수정(introId, intro);
+        return new CMRespDto<>(1,"수정성공",null);
     }
+
 }

@@ -52,18 +52,15 @@ public class IntroDaoTest {
     // String introTitle = "안녕하세요";
     // String introBirth = "19991010";
     // String introTask = "밥먹기";
-    // // when
     // Intro intro = new Intro(introTitle, introBirth, introTask);
-    // intro.setIntroId(null);
 
-    // Intro introPS = introDao.findById(intro.getIntroId());
-    // assertTrue(introPS == null ? false : true);
+    // //영속
+    // Intro introPS = introDao.findById(null);
 
+    // //when
     // introPS.update(intro);
 
-    // int result = introDao.update(introPS);
-    // System.out.println(intro.getIntroTitle());
-    // // then
-    // assertEquals(1, result);
+    // //then
+    // assertEquals("안녕하세요", introPS.getIntroTitle());
     // }
 }
