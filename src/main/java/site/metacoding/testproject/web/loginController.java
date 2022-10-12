@@ -18,23 +18,23 @@ public class loginController {
 
 	private final EmployeeService employeeService;
 
-	/* @PostMapping("/join")
-	public String 회원가입(Employee employee) {
-		employeeService.employeeJoin(employee);
-		return "user/main";
-	} */
+	/*
+	 * @PostMapping("/join")
+	 * public String 회원가입(Employee employee) {
+	 * employeeService.employeeJoin(employee);
+	 * return "user/main";
+	 * }
+	 */
 
-	
 	@PostMapping("/join")
 	public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee) {
-	employeeService.employeeJoin(employee);
-	return new CMRespDto<>(1, "회원가입성공", null);
+		employeeService.employeeJoin(employee);
+		return new CMRespDto<>(1, "회원가입성공", null);
 	}
-	
 
 	@GetMapping("/join")
 	public String mainJoin() {
-		return "user/main";
+		return "user/header";
 	}
 
 	@GetMapping("/")

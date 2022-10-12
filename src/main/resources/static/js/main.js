@@ -1,14 +1,12 @@
-$("ul.tabs li").click(function(){
+$("ul.tabs li").click(function () {
   var tab_id = $(this).attr("data-tab");
   $("ul.tabs li").removeClass("on");
   $(".tab-content").removeClass("on");
   $(".tab-content").hide();
   $(this).addClass("on");
-  $("#"+tab_id).addClass("on");
-  $("#"+tab_id).show();
-})
-
-
+  $("#" + tab_id).addClass("on");
+  $("#" + tab_id).show();
+});
 
 $("#btnDelete").click(() => {
   DeletestadiumList();
@@ -73,19 +71,17 @@ function login() {
   //람다식을 사용하면 코드가 간결해지고, 스코프가 명확해진다.
 }
 
-
 function joinSave() {
   let data = {
-    employeeUsername: $("#u_name").val(),
-    employeePassword: $("#password").val(),
-    employeeSex: $("#sex").val(),
-    employeeEmail: $("#email").val(),
-    employeeName: $("#id").val(),
-    employeeBirth: $("#u_birth").val(),
-    employeeTel: $("#u_phone").val(),
-    employeeLocation: $("#u_adress").val(),
+    employeeUsername: $("#employeeUsername").val(),
+    employeePassword: $("#employeePassword").val(),
+    employeeSex: $("#employeeSex").val(),
+    employeeEmail: $("#employeeEmail").val(),
+    employeeName: $("#employeeName").val(),
+    employeeBirth: $("#employeeBirth").val(),
+    employeeTel: $("#employeeTel").val(),
+    employeeLocation: $("#employeeLocation").val(),
   };
-
   $.ajax("/join", {
     type: "POST",
     dataType: "json", //응답데이터 타입명
@@ -115,8 +111,8 @@ function popClose2() {
   let modalPop = $(".modal_join_wrap");
   let modalBg = $(".modal_join_bg");
 
-  $(modalPop).hide();
-  $(modalBg).hide();
+  $(modalPop).show();
+  $(modalBg).show();
 }
 
 function popOpen() {
@@ -133,8 +129,6 @@ function popClose() {
   $(modalPop).hide();
   $(modalBg).hide();
 }
-
-
 
 /* 기업서비스 */
 function popOpenCompany() {
@@ -181,4 +175,3 @@ function popCloseRecruit() {
   $(modalPop).hide();
   $(modalBg).hide();
 }
-
