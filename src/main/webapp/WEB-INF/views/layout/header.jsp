@@ -14,10 +14,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/employee.js"></script>
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     ></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
     <title>4조 PROJECT</title>
   </head>
@@ -148,6 +150,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     value="${employeeUsername}"
                     maxlength="20"
                   />
+                  <button
+                    id="btnUsernameSameCheck"
+                    type="button"
+                    maxlength="20"
+                  >
+                    중복체크
+                  </button>
                 </span>
               </div>
 
@@ -164,6 +173,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     maxlength="20"
                   />
                 </span>
+              </div>
+              <div class="join_pw2 join_box">
+                <input
+                  id="employeepasswordRepeat"
+                  type="password"
+                  placeholder="패스워드를 입력하세요."
+                />
               </div>
               <div class="join_sex join_box">
                 <h3>
@@ -237,24 +253,44 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     />
                   </span>
                 </div>
-                <div class="join_adress join_box">
-                  <h3>
-                    <label for="employeeLocation">주소</label>
-                  </h3>
-                  <span>
-                    <input
-                      id="employeeLocation"
-                      type="text"
-                      placeholder="주소를 입력하세요."
-                      name="employeeLocation"
-                      maxlength="100"
-                    />
-                  </span>
-                </div>
               </div>
             </div>
 
             <div class="join_right">
+              <div class="join_adress join_box company_location">
+                <h3>
+                  <label for="employeeLocation">주소</label>
+                </h3>
+                <span>
+                  <input
+                    type="text"
+                    id="sample6_postcode"
+                    placeholder="우편번호"
+                  />
+                  <input
+                    type="button"
+                    onclick="sample6_execDaumPostcode()"
+                    value="우편번호 찾기"
+                  /><br />
+                  <input
+                    type="text"
+                    id="sample6_address"
+                    class="employeeLocation"
+                    placeholder="주소"
+                  /><br />
+                  <input
+                    type="text"
+                    id="sample6_detailAddress"
+                    placeholder="상세주소"
+                  />
+                  <input
+                    type="text"
+                    id="sample6_extraAddress"
+                    placeholder="참고항목"
+                  />
+                </span>
+              </div>
+              <!-- .join_adress -->
               <div class="career_part">
                 <h2>관심분야</h2>
                 <div class="career_part1 part_box">

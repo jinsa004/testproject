@@ -1,6 +1,9 @@
 package site.metacoding.testproject.web;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,16 +21,8 @@ public class loginController {
 
 	private final EmployeeService employeeService;
 
-	/*
-	 * @PostMapping("/join")
-	 * public String 회원가입(Employee employee) {
-	 * employeeService.employeeJoin(employee);
-	 * return "user/main";
-	 * }
-	 */
-
 	@PostMapping("/join")
-	public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee) {
+	public @ResponseBody CMRespDto<?> 회원가입(@RequestBody @Valid Employee employee) {
 		employeeService.employeeJoin(employee);
 		return new CMRespDto<>(1, "회원가입성공", null);
 	}
